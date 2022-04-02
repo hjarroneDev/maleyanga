@@ -102,7 +102,7 @@ class _LoginPageState extends State<LoginPage> {
                                     textAlign: TextAlign.start,
                                     textAlignVertical: TextAlignVertical.bottom,
                                     decoration: InputDecoration(
-                                      hintText: 'Passworld',
+                                      hintText: 'Password',
                                       hintStyle: GoogleFonts.roboto(
                                           color: Colors.black26),
                                       border: OutlineInputBorder(
