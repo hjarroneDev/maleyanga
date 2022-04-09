@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'conteudo.dart';
+import 'menu.dart';
 
 class Dashbord extends StatefulWidget {
   const Dashbord({Key? key}) : super(key: key);
@@ -9,21 +11,28 @@ class Dashbord extends StatefulWidget {
 }
 
 class _DashbordState extends State<Dashbord> {
+
+  
+
+
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+
     return Container(
-      color: Colors.cyan[100],
-      child: Center(
-        child: SizedBox(
-          height: 750,
-          width: 1400,
-          child: Card(
-            elevation: 8,
-            shadowColor: Colors.cyan[200],
-            margin: const EdgeInsets.all(20),
-            child: null,
-          ),
-        ),
+      decoration: const BoxDecoration(
+          gradient: LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: [
+            Color.fromARGB(230, 212, 170, 170),
+            Color.fromARGB(225, 169, 216, 223)
+          ])),
+      child: Row(
+        children:  [
+           Menu(screenWidget: screenWidth),
+           const Painel(),
+        ],
       ),
     );
   }

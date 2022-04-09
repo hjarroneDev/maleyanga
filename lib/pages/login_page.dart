@@ -28,8 +28,14 @@ class _LoginPageState extends State<LoginPage> {
     }
 
     return Scaffold(
+      
       body: Container(
-        color: Colors.cyan[100],
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: [ Color.fromARGB(230, 212, 170, 170), Color.fromARGB(225, 169, 216, 223)])),
+      
         child: Expanded(
           child: DelayedDisplay(
             delay: const Duration(seconds: 3),
@@ -44,8 +50,9 @@ class _LoginPageState extends State<LoginPage> {
                     child: Padding(
                       padding: const EdgeInsets.only(),
                       child: Card(
+                        color: Colors.grey[300],
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(8),
+                          borderRadius: BorderRadius.circular(20),
                         ),
                         elevation: 10,
                         child: Padding(
@@ -123,12 +130,12 @@ class _LoginPageState extends State<LoginPage> {
                                 height: 15,
                               ),
                               SizedBox(
-                                height: 40,
+                                height: 35,
                                 width: 300,
                                 child: ElevatedButton(
                                   style: ElevatedButton.styleFrom(
                                       fixedSize: const Size.fromHeight(30),
-                                      primary: Colors.cyan[200]),
+                                      primary: const Color.fromARGB(255, 131, 203, 212)),
                                   child: FittedBox(
                                     child: Text(
                                       'Log In',
