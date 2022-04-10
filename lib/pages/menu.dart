@@ -21,7 +21,7 @@ class _MenuState extends State<Menu> {
       });
     } else {
       setState(() {
-        scream = 106;
+        scream = 88;
       });
     }
 
@@ -33,78 +33,72 @@ class _MenuState extends State<Menu> {
         shadowColor: Colors.white,
         color: Colors.grey[300],
         margin: const EdgeInsets.all(10),
-        child: Padding(
-          padding: const EdgeInsets.all(2),
-          child: Column(
-            children: [
-              SizedBox(
-                height: 80,
-                width: 400,
-                child: Card(
+        child: Column(
+          children: [
+            SizedBox(
+              height: 68,
+              width: 400,
+              child: Card(
 
-                  color: const Color.fromARGB(255, 197, 194, 194),
-                  
-                  child: Row(
-                    children: [
-                       Padding(
-                        padding: const EdgeInsets.all(2),
-                        child: SizedBox(
-                          height: 70,
-                          width: 70,
-                          child: Card(
-                            color:  Colors.grey.shade300,
-                            semanticContainer: true,
-                            clipBehavior: Clip.antiAliasWithSaveLayer,
-                            child: const  Center(
-                              child: Icon(
-                                Icons.supervised_user_circle,
-                                size: 60,
+                color: const Color.fromARGB(255, 197, 194, 194),
+                
+                child: Row(
+                  children: [
+                     SizedBox(
+                       height: 60,
+                       width: 60,
+                       child: Card(
+                         color:  Colors.grey.shade300,
+                         semanticContainer: true,
+                         clipBehavior: Clip.antiAliasWithSaveLayer,
+                         child: const  Center(
+                           child: Icon(
+                             Icons.supervised_user_circle,
+                             size: 50,
+                           ),
+                         )
+                         
+
+                       ),
+                     ),
+                    Expanded(
+                      child: Padding(
+                        padding: const EdgeInsets.only(
+                            top: 8, right: 8, bottom: 8),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Text(
+                              "Henriques Arrone",
+                              style: GoogleFonts.roboto(
+                                textStyle: const TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.black54,
+                                ),
                               ),
-                            )
-                            
-
-                          ),
+                            ),
+                            const Divider(
+                              height: 4,
+                            ),
+                            Text(
+                              "hjarrone@gmail.com",
+                              style: GoogleFonts.roboto(
+                                textStyle: const TextStyle(
+                                  fontSize: 16,
+                                  color: Colors.black54,
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
                       ),
-                      Expanded(
-                        child: Padding(
-                          padding: const EdgeInsets.only(
-                              top: 20, right: 8, bottom: 8),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Text(
-                                "Henriques Arrone",
-                                style: GoogleFonts.roboto(
-                                  textStyle: const TextStyle(
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.black54,
-                                  ),
-                                ),
-                              ),
-                              const Divider(
-                                height: 4,
-                              ),
-                              Text(
-                                "hjarrone@gmail.com",
-                                style: GoogleFonts.roboto(
-                                  textStyle: const TextStyle(
-                                    fontSize: 16,
-                                    color: Colors.black54,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      )
-                    ],
-                  ),
+                    )
+                  ],
                 ),
-              )
-            ],
-          ),
+              ),
+            )
+          ],
         ),
       ),
     );
