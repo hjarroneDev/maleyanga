@@ -33,142 +33,131 @@ class _MenuState extends State<Menu> {
     return SizedBox(
       height: 850,
       width: scream!,
-      child: Card(
-        elevation: 5,
-        shadowColor: Colors.white,
-        color: Colors.grey[300],
-        margin: const EdgeInsets.all(10),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.end,
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            SizedBox(
-              height: 68,
-              width: 400,
-              child: Card(
-                color: const Color.fromARGB(255, 197, 194, 194),
-                child: Row(
-                  children: [
-                    SizedBox(
-                      height: 60,
-                      width: 60,
-                      child: Card(
-                          color: Colors.grey.shade300,
-                          semanticContainer: true,
-                          clipBehavior: Clip.antiAliasWithSaveLayer,
-                          child: const Center(
-                            child: Icon(
-                              Icons.supervised_user_circle,
-                              size: 50,
-                            ),
-                          )),
-                    ),
-                    Expanded(
-                      child: Padding(
-                        padding:
-                            const EdgeInsets.only(top: 8, right: 8, bottom: 8),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Text(
-                              "Henriques Arrone",
-                              style: GoogleFonts.roboto(
-                                textStyle: const TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.black54,
-                                ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.end,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Column(
+            children: [
+              SizedBox(
+                height: 145,
+                width: 400,
+                child: Card(
+                  color: const Color.fromARGB(255, 197, 194, 194),
+                  child: Column(
+                    children: [
+                      Row(
+                        children: [
+                          SizedBox(
+                            height: 60,
+                            width: 60,
+                            child: Card(
+                                color: Colors.grey.shade300,
+                                semanticContainer: true,
+                                clipBehavior: Clip.antiAliasWithSaveLayer,
+                                child: const Center(
+                                  child: Icon(
+                                    Icons.supervised_user_circle,
+                                    size: 50,
+                                  ),
+                                )),
+                          ),
+                          Expanded(
+                            child: Padding(
+                              padding: const EdgeInsets.only(
+                                  top: 8, right: 8, bottom: 8),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    "Henriques Arrone",
+                                    style: GoogleFonts.roboto(
+                                      textStyle: const TextStyle(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.black54,
+                                      ),
+                                    ),
+                                  ),
+                                  const Divider(
+                                    height: 4,
+                                  ),
+                                  Text(
+                                    "hjarrone@gmail.com",
+                                    style: GoogleFonts.roboto(
+                                      textStyle: const TextStyle(
+                                        fontSize: 16,
+                                        color: Colors.black54,
+                                      ),
+                                    ),
+                                  ),
+                                ],
                               ),
                             ),
-                            const Divider(
-                              height: 4,
-                            ),
-                            Text(
-                              "hjarrone@gmail.com",
-                              style: GoogleFonts.roboto(
-                                textStyle: const TextStyle(
-                                  fontSize: 16,
-                                  color: Colors.black54,
+                          )
+                        ],
+                      ),
+                      const Divider(),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          SizedBox(
+                            width: 80,
+                            child: Card(
+                              color: Colors.white,
+                              child: InkWell(
+                                hoverColor:
+                                    const Color.fromARGB(97, 169, 230, 209),
+                                onTap: () {},
+                                child: const Icon(
+                                  Icons.add_outlined,
+                                  size: 40,
+                                  color: Color.fromARGB(255, 138, 207, 184),
                                 ),
                               ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    )
-                  ],
-                ),
-              ),
-            ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children:  [
-                ButtonMenu(
-                  btName: 'GERAL',
-                  visivel: visivel!,
-                ),
-                ButtonMenu(
-                  btName: 'CARTEIRAS',
-                  visivel: visivel!,
-                ),
-                ButtonMenu(
-                  btName: 'MOVIMENTOS',
-                  visivel: visivel!,
-                ),
-                ButtonMenu(
-                  btName: 'PLANEJADOS',
-                  visivel: visivel!,
-                ),
-                ButtonMenu(
-                  btName: 'PROJECTOS',
-                  visivel: visivel!,
-                ),
-              ],
-            ),
-             SizedBox(
-              height: 57,
-              width: 400,
-              child: Card(
-                color: const Color.fromARGB(255, 197, 194, 194),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    SizedBox(
-                      height: 50,
-                      width: 50,
-                      child: Card(
-                        color: Colors.grey.shade300,
-                        child: const Icon(
-                          Icons.exit_to_app,
-                          size: 40,
-                        ),
-                      ),
-                    ),
-                    const SizedBox(
-                      width: 10,
-                    ),
-                    Visibility(
-                      visible: visivel!,
-                      child: Center(
-                        child: Text(
-                          'Sair',
-                          style: GoogleFonts.roboto(
-                            textStyle: const TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.black54,
                             ),
                           ),
-                        ),
+                          SizedBox(
+                            width: 80,
+                            child: Card(
+                              color: Colors.white,
+                              child: InkWell(
+                                hoverColor:
+                                    const Color.fromARGB(96, 230, 181, 169),
+                                onTap: () {},
+                                child: const Icon(
+                                  Icons.remove,
+                                  size: 40,
+                                  color: Color.fromARGB(255, 218, 137, 137),
+                                ),
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            width: 80,
+                            child: Card(
+                              color: Colors.white,
+                              child: InkWell(
+                                hoverColor:
+                                    const Color.fromARGB(96, 169, 211, 230),
+                                onTap: () {},
+                                child: const Icon(
+                                  Icons.compare_arrows_rounded,
+                                  size: 40,
+                                  color: Color.fromARGB(255, 138, 185, 207),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
-            )
-          ],
-        ),
+            ],
+          ),
+        ],
       ),
     );
   }
