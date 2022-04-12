@@ -14,8 +14,6 @@ class Menu extends StatefulWidget {
 class _MenuState extends State<Menu> {
   @override
   Widget build(BuildContext context) {
-
-
     return Padding(
       padding: const EdgeInsets.all(10),
       child: SizedBox(
@@ -124,9 +122,7 @@ class _MenuState extends State<Menu> {
                                 child: InkWell(
                                   hoverColor:
                                       const Color.fromARGB(97, 169, 230, 209),
-                                  onTap: () {
-
-                                  },
+                                  onTap: () {},
                                   child: const Icon(
                                     Icons.add_outlined,
                                     size: 35,
@@ -145,10 +141,7 @@ class _MenuState extends State<Menu> {
                                 child: InkWell(
                                   hoverColor:
                                       const Color.fromARGB(96, 230, 181, 169),
-                                  onTap: () {
-                                   
-                 
-                                  },
+                                  onTap: () {},
                                   child: const Icon(
                                     Icons.remove,
                                     size: 35,
@@ -167,9 +160,7 @@ class _MenuState extends State<Menu> {
                                 child: InkWell(
                                   hoverColor:
                                       const Color.fromARGB(96, 169, 211, 230),
-                                  onTap: () {
-                                    
-                                  },
+                                  onTap: () {},
                                   child: const Icon(
                                     Icons.compare_arrows_rounded,
                                     size: 35,
@@ -180,6 +171,9 @@ class _MenuState extends State<Menu> {
                             ),
                           ),
                         ],
+                      ),
+                      const SizedBox(
+                        height: 10,
                       ),
                       const Movimento(),
                     ],
