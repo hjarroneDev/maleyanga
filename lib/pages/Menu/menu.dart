@@ -12,6 +12,8 @@ class Menu extends StatefulWidget {
 }
 
 class _MenuState extends State<Menu> {
+  bool movVisivel = false;
+  Color movColor = Colors.white;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -20,7 +22,7 @@ class _MenuState extends State<Menu> {
         width: 280,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.end,
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Stack(
               children: [
@@ -43,16 +45,16 @@ class _MenuState extends State<Menu> {
                                   child: InkWell(
                                     onTap: () {},
                                     child: Card(
-                                        color: Colors.grey.shade300,
-                                        semanticContainer: true,
-                                        clipBehavior:
-                                            Clip.antiAliasWithSaveLayer,
-                                        child: const Center(
-                                          child: Icon(
-                                            Icons.supervised_user_circle,
-                                            size: 50,
-                                          ),
-                                        )),
+                                      color: Colors.grey.shade300,
+                                      semanticContainer: true,
+                                      clipBehavior: Clip.antiAliasWithSaveLayer,
+                                      child: const Center(
+                                        child: Icon(
+                                          Icons.supervised_user_circle,
+                                          size: 50,
+                                        ),
+                                      ),
+                                    ),
                                   ),
                                 ),
                                 Expanded(
@@ -120,9 +122,23 @@ class _MenuState extends State<Menu> {
                               child: Card(
                                 color: Colors.white,
                                 child: InkWell(
+                                  onTap: () {
+                                    setState(() {
+                                      if (movVisivel == true &&
+                                          movColor !=
+                                              const Color.fromARGB(
+                                                  97, 169, 230, 209)) {
+                                        movColor = const Color.fromARGB(
+                                            97, 169, 230, 209);
+                                      } else {
+                                        movVisivel = !movVisivel;
+                                        movColor = const Color.fromARGB(
+                                            97, 169, 230, 209);
+                                      }
+                                    });
+                                  },
                                   hoverColor:
                                       const Color.fromARGB(97, 169, 230, 209),
-                                  onTap: () {},
                                   child: const Icon(
                                     Icons.add_outlined,
                                     size: 35,
@@ -139,9 +155,23 @@ class _MenuState extends State<Menu> {
                               child: Card(
                                 color: Colors.white,
                                 child: InkWell(
+                                  onTap: () {
+                                    setState(() {
+                                      if (movVisivel == true &&
+                                          movColor !=
+                                              const Color.fromARGB(
+                                                  96, 230, 181, 169)) {
+                                        movColor = const Color.fromARGB(
+                                            96, 230, 181, 169);
+                                      } else {
+                                        movVisivel = !movVisivel;
+                                        movColor = const Color.fromARGB(
+                                            96, 230, 181, 169);
+                                      }
+                                    });
+                                  },
                                   hoverColor:
                                       const Color.fromARGB(96, 230, 181, 169),
-                                  onTap: () {},
                                   child: const Icon(
                                     Icons.remove,
                                     size: 35,
@@ -158,9 +188,23 @@ class _MenuState extends State<Menu> {
                               child: Card(
                                 color: Colors.white,
                                 child: InkWell(
+                                  onTap: () {
+                                    setState(() {
+                                      if (movVisivel == true &&
+                                          movColor !=
+                                              const Color.fromARGB(
+                                                  96, 169, 211, 230)) {
+                                        movColor = const Color.fromARGB(
+                                            96, 169, 211, 230);
+                                      } else {
+                                        movVisivel = !movVisivel;
+                                        movColor = const Color.fromARGB(
+                                            96, 169, 211, 230);
+                                      }
+                                    });
+                                  },
                                   hoverColor:
                                       const Color.fromARGB(96, 169, 211, 230),
-                                  onTap: () {},
                                   child: const Icon(
                                     Icons.compare_arrows_rounded,
                                     size: 35,
@@ -175,8 +219,16 @@ class _MenuState extends State<Menu> {
                       const SizedBox(
                         height: 10,
                       ),
-                      const Movimento(),
                     ],
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 155),
+                  child: Visibility(
+                    visible: movVisivel,
+                    child: Movimento(
+                      movColor: movColor,
+                    ),
                   ),
                 ),
               ],
