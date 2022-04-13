@@ -3,9 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Movimento extends StatefulWidget {
-
   final Color movColor;
-   const Movimento({Key? key, required this.movColor}) : super(key: key);
+  final bool transfVisivel;
+  const Movimento(
+      {Key? key, required this.movColor, required this.transfVisivel})
+      : super(key: key);
 
   @override
   State<Movimento> createState() => _MovimentoState();
@@ -13,20 +15,33 @@ class Movimento extends StatefulWidget {
 
 class _MovimentoState extends State<Movimento> {
 //AGENTE
-  final agente = [
+  final contas = [
     "BCI",
     "BIM",
     "M-Pesa",
     "E-Mola",
     "Carteira",
   ];
-  String? agenteValue;
-
-
+  String? conta1;
+  String? conta2;
 
   @override
   Widget build(BuildContext context) {
-   
+    String? conta;
+    String? botao;
+
+    if (widget.transfVisivel == false) {
+      setState(() {
+        conta = "Conta:  ";
+        botao = 'Gravar';
+      });
+    } else {
+      setState(() {
+        conta = "P/ Conta:  ";
+        botao = 'Transferir';
+      });
+    }
+
     return DelayedDisplay(
       delay: const Duration(milliseconds: 50),
       child: SizedBox(
@@ -48,10 +63,68 @@ class _MovimentoState extends State<Movimento> {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
+                              Visibility(
+                                visible: widget.transfVisivel,
+                                child: Row(
+                                  children: [
+                                    Text(
+                                      'D/ Conta: ',
+                                      style: GoogleFonts.roboto(
+                                        textStyle: const TextStyle(
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.black54,
+                                        ),
+                                      ),
+                                    ),
+                                    const SizedBox(
+                                      width: 30,
+                                    ),
+                                    Expanded(
+                                      child: Container(
+                                        height: 40,
+                                        decoration: BoxDecoration(
+                                          border: Border.all(
+                                            color: const Color.fromARGB(
+                                                88, 104, 102, 102),
+                                            width: 2,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(5),
+                                        ),
+                                        child: DropdownButtonHideUnderline(
+                                          child: DropdownButton<String>(
+                                            icon: const Visibility(
+                                                visible: false,
+                                                child:
+                                                    Icon(Icons.arrow_downward)),
+                                            borderRadius:
+                                                BorderRadius.circular(8),
+                                            value: conta1,
+                                            isExpanded: true,
+                                            hint: const Text(
+                                              "  Select",
+                                            ),
+                                            items: contas
+                                                .map(buildMenuItem)
+                                                .toList(),
+                                            onChanged: (value) => setState(
+                                              () => conta1 = value,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              const SizedBox(
+                                height: 10,
+                              ),
                               Row(
                                 children: [
                                   Text(
-                                    "Valor: ",
+                                    "Valor:  ",
                                     style: GoogleFonts.roboto(
                                       textStyle: const TextStyle(
                                         fontSize: 18,
@@ -84,7 +157,8 @@ class _MovimentoState extends State<Movimento> {
                                             borderRadius:
                                                 BorderRadius.circular(5.0),
                                           ),
-                                          enabledBorder: const OutlineInputBorder(
+                                          enabledBorder:
+                                              const OutlineInputBorder(
                                             borderSide: BorderSide(
                                                 color: Colors.grey, width: 0.0),
                                           ),
@@ -100,7 +174,7 @@ class _MovimentoState extends State<Movimento> {
                               Row(
                                 children: [
                                   Text(
-                                    "Conta: ",
+                                    conta!,
                                     style: GoogleFonts.roboto(
                                       textStyle: const TextStyle(
                                         fontSize: 18,
@@ -117,7 +191,8 @@ class _MovimentoState extends State<Movimento> {
                                       height: 40,
                                       decoration: BoxDecoration(
                                         border: Border.all(
-                                          color: const Color.fromARGB(88, 104, 102, 102),
+                                          color: const Color.fromARGB(
+                                              88, 104, 102, 102),
                                           width: 2,
                                         ),
                                         borderRadius: BorderRadius.circular(5),
@@ -126,17 +201,20 @@ class _MovimentoState extends State<Movimento> {
                                         child: DropdownButton<String>(
                                           icon: const Visibility(
                                               visible: false,
-                                              child: Icon(Icons.arrow_downward)),
-                                          borderRadius: BorderRadius.circular(8),
-                                          value: agenteValue,
+                                              child:
+                                                  Icon(Icons.arrow_downward)),
+                                          borderRadius:
+                                              BorderRadius.circular(8),
+                                          value: conta2,
                                           isExpanded: true,
                                           hint: const Text(
                                             "  Select",
                                           ),
-                                          items:
-                                              agente.map(buildMenuItem).toList(),
+                                          items: contas
+                                              .map(buildMenuItem2)
+                                              .toList(),
                                           onChanged: (value) => setState(
-                                            () => agenteValue = value,
+                                            () => conta2 = value,
                                           ),
                                         ),
                                       ),
@@ -149,6 +227,27 @@ class _MovimentoState extends State<Movimento> {
                               ),
                               const Divider(
                                 height: 4,
+                              ),
+                              const SizedBox(
+                                height: 5,
+                              ),
+                              SizedBox(
+                                width: 400,
+                                child: ElevatedButton(
+                                  style: ElevatedButton.styleFrom(
+                                      fixedSize: const Size.fromHeight(30),
+                                      primary: Colors.cyan[200]),
+                                  child: FittedBox(
+                                    child: Text(
+                                      botao!,
+                                      style: const TextStyle(
+                                        fontSize: 17,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                  ),
+                                  onPressed: () {},
+                                ),
                               ),
                             ],
                           ),
@@ -165,8 +264,19 @@ class _MovimentoState extends State<Movimento> {
     );
   }
 
-  //Situação CORESPONDENCIA
+  //Contas 1
   DropdownMenuItem<String> buildMenuItem(String item) => DropdownMenuItem(
+        value: item,
+        child: Text(
+          '   $item',
+          style: const TextStyle(
+            fontSize: 16,
+          ),
+        ),
+      );
+
+  //Contas 2
+  DropdownMenuItem<String> buildMenuItem2(String item) => DropdownMenuItem(
         value: item,
         child: Text(
           '   $item',

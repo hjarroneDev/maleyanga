@@ -13,6 +13,7 @@ class Menu extends StatefulWidget {
 
 class _MenuState extends State<Menu> {
   bool movVisivel = false;
+  bool transfVisivel = false;
   Color movColor = Colors.white;
   @override
   Widget build(BuildContext context) {
@@ -124,16 +125,13 @@ class _MenuState extends State<Menu> {
                                 child: InkWell(
                                   onTap: () {
                                     setState(() {
-                                      if (movVisivel == true &&
-                                          movColor !=
-                                              const Color.fromARGB(
-                                                  97, 169, 230, 209)) {
-                                        movColor = const Color.fromARGB(
-                                            97, 169, 230, 209);
+                                      if (movVisivel == true && movColor != const Color.fromARGB(97, 169, 230, 209)) {
+                                        movColor = const Color.fromARGB(97, 169, 230, 209);
+                                        transfVisivel = false;
                                       } else {
                                         movVisivel = !movVisivel;
-                                        movColor = const Color.fromARGB(
-                                            97, 169, 230, 209);
+                                        transfVisivel = false;
+                                        movColor = const Color.fromARGB(97, 169, 230, 209);
                                       }
                                     });
                                   },
@@ -157,13 +155,11 @@ class _MenuState extends State<Menu> {
                                 child: InkWell(
                                   onTap: () {
                                     setState(() {
-                                      if (movVisivel == true &&
-                                          movColor !=
-                                              const Color.fromARGB(
-                                                  96, 230, 181, 169)) {
-                                        movColor = const Color.fromARGB(
-                                            96, 230, 181, 169);
+                                      if (movVisivel == true && movColor != const Color.fromARGB( 96, 230, 181, 169)) {
+                                        movColor = const Color.fromARGB(96, 230, 181, 169);
+                                        transfVisivel = false;
                                       } else {
+                                        transfVisivel = false;
                                         movVisivel = !movVisivel;
                                         movColor = const Color.fromARGB(
                                             96, 230, 181, 169);
@@ -190,13 +186,12 @@ class _MenuState extends State<Menu> {
                                 child: InkWell(
                                   onTap: () {
                                     setState(() {
-                                      if (movVisivel == true &&
-                                          movColor !=
-                                              const Color.fromARGB(
-                                                  96, 169, 211, 230)) {
-                                        movColor = const Color.fromARGB(
-                                            96, 169, 211, 230);
+                                      if (movVisivel == true && movColor != const Color.fromARGB(96, 169, 211, 230)) {
+                                        transfVisivel = true;
+                                        movColor = const Color.fromARGB(96, 169, 211, 230);
                                       } else {
+
+                                        transfVisivel = true;
                                         movVisivel = !movVisivel;
                                         movColor = const Color.fromARGB(
                                             96, 169, 211, 230);
@@ -228,6 +223,7 @@ class _MenuState extends State<Menu> {
                     visible: movVisivel,
                     child: Movimento(
                       movColor: movColor,
+                      transfVisivel: transfVisivel,
                     ),
                   ),
                 ),
