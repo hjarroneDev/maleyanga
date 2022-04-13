@@ -82,7 +82,7 @@ class _MovimentoState extends State<Movimento> {
                                     ),
                                     Expanded(
                                       child: Container(
-                                        height: 40,
+                                        height: 35,
                                         decoration: BoxDecoration(
                                           border: Border.all(
                                             color: const Color.fromARGB(
@@ -138,7 +138,7 @@ class _MovimentoState extends State<Movimento> {
                                   ),
                                   Expanded(
                                     child: SizedBox(
-                                      height: 38,
+                                      height: 34,
                                       child: TextField(
                                         style: GoogleFonts.roboto(
                                           textStyle: const TextStyle(
@@ -184,11 +184,11 @@ class _MovimentoState extends State<Movimento> {
                                     ),
                                   ),
                                   const SizedBox(
-                                    width: 30,
+                                    width: 28,
                                   ),
                                   Expanded(
                                     child: Container(
-                                      height: 40,
+                                      height: 35,
                                       decoration: BoxDecoration(
                                         border: Border.all(
                                           color: const Color.fromARGB(
@@ -233,6 +233,7 @@ class _MovimentoState extends State<Movimento> {
                               ),
                               SizedBox(
                                 width: 400,
+                                height: 35,
                                 child: ElevatedButton(
                                   style: ElevatedButton.styleFrom(
                                       fixedSize: const Size.fromHeight(30),
