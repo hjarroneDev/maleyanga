@@ -1,6 +1,6 @@
-# maleyanga
+# Maleyanga
 
-A new Flutter project.
+É um projecto pessoal e privado voltado para o control dos meus gastos
 
 ## Getting Started
 
