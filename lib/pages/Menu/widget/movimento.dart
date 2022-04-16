@@ -1,6 +1,7 @@
 import 'package:delayed_display/delayed_display.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:pattern_formatter/pattern_formatter.dart';
 
 class Movimento extends StatefulWidget {
   final Color movColor;
@@ -43,7 +44,7 @@ class _MovimentoState extends State<Movimento> {
     }
 
     return DelayedDisplay(
-      delay: const Duration(milliseconds: 50),
+      delay: const Duration(milliseconds: 10),
       child: SizedBox(
         width: 400,
         child: Card(
@@ -140,6 +141,11 @@ class _MovimentoState extends State<Movimento> {
                                     child: SizedBox(
                                       height: 34,
                                       child: TextField(
+                                        keyboardType: TextInputType.number,
+                                        inputFormatters: [
+                                          ThousandsFormatter(
+                                              allowFraction: true)
+                                        ],
                                         style: GoogleFonts.roboto(
                                           textStyle: const TextStyle(
                                             fontSize: 17,

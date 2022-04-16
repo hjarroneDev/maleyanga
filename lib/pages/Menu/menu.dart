@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'widget/contas.dart';
 import 'widget/movimento.dart';
 
 class Menu extends StatefulWidget {
@@ -24,6 +25,7 @@ class _MenuState extends State<Menu> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.end,
           mainAxisAlignment: MainAxisAlignment.start,
+          mainAxisSize: MainAxisSize.min,
           children: [
             Stack(
               children: [
@@ -125,13 +127,18 @@ class _MenuState extends State<Menu> {
                                 child: InkWell(
                                   onTap: () {
                                     setState(() {
-                                      if (movVisivel == true && movColor != const Color.fromARGB(97, 169, 230, 209)) {
-                                        movColor = const Color.fromARGB(97, 169, 230, 209);
+                                      if (movVisivel == true &&
+                                          movColor !=
+                                              const Color.fromARGB(
+                                                  97, 169, 230, 209)) {
+                                        movColor = const Color.fromARGB(
+                                            97, 169, 230, 209);
                                         transfVisivel = false;
                                       } else {
                                         movVisivel = !movVisivel;
                                         transfVisivel = false;
-                                        movColor = const Color.fromARGB(97, 169, 230, 209);
+                                        movColor = const Color.fromARGB(
+                                            97, 169, 230, 209);
                                       }
                                     });
                                   },
@@ -155,8 +162,12 @@ class _MenuState extends State<Menu> {
                                 child: InkWell(
                                   onTap: () {
                                     setState(() {
-                                      if (movVisivel == true && movColor != const Color.fromARGB( 96, 230, 181, 169)) {
-                                        movColor = const Color.fromARGB(96, 230, 181, 169);
+                                      if (movVisivel == true &&
+                                          movColor !=
+                                              const Color.fromARGB(
+                                                  96, 230, 181, 169)) {
+                                        movColor = const Color.fromARGB(
+                                            96, 230, 181, 169);
                                         transfVisivel = false;
                                       } else {
                                         transfVisivel = false;
@@ -186,11 +197,14 @@ class _MenuState extends State<Menu> {
                                 child: InkWell(
                                   onTap: () {
                                     setState(() {
-                                      if (movVisivel == true && movColor != const Color.fromARGB(96, 169, 211, 230)) {
+                                      if (movVisivel == true &&
+                                          movColor !=
+                                              const Color.fromARGB(
+                                                  96, 169, 211, 230)) {
                                         transfVisivel = true;
-                                        movColor = const Color.fromARGB(96, 169, 211, 230);
+                                        movColor = const Color.fromARGB(
+                                            96, 169, 211, 230);
                                       } else {
-
                                         transfVisivel = true;
                                         movVisivel = !movVisivel;
                                         movColor = const Color.fromARGB(
@@ -217,17 +231,27 @@ class _MenuState extends State<Menu> {
                     ],
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 155),
-                  child: Visibility(
+              ],
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 5),
+              child: Column(
+                children: [
+                  Visibility(
                     visible: movVisivel,
                     child: Movimento(
                       movColor: movColor,
                       transfVisivel: transfVisivel,
                     ),
                   ),
-                ),
-              ],
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  const SizedBox(
+                    child: Contas(),
+                  ),
+                ],
+              ),
             ),
           ],
         ),

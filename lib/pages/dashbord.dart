@@ -11,10 +11,6 @@ class Dashbord extends StatefulWidget {
 }
 
 class _DashbordState extends State<Dashbord> {
-
-  
-
-
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
@@ -29,9 +25,15 @@ class _DashbordState extends State<Dashbord> {
             Color.fromARGB(225, 169, 216, 223)
           ])),
       child: Row(
-        children:  [
-           Menu(screenWidget: screenWidth),
-           const Painel(),
+        children: [
+          Column(
+            children: [
+              Expanded(
+                child: Menu(screenWidget: screenWidth),
+              ),
+            ],
+          ),
+          const Painel(),
         ],
       ),
     );

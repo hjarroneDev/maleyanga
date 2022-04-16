@@ -31,6 +31,7 @@ dependencies:
     sdk: flutter
   delayed_display: ^2.0.0
   google_fonts: ^2.3.1
+  pattern_formatter: ^2.0.0
 
 
   # The following adds the Cupertino Icons font to your application.
