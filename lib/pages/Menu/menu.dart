@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'widget/contas.dart';
+import 'widget/menubut.dart';
 import 'widget/movimento.dart';
 
 class Menu extends StatefulWidget {
@@ -21,7 +22,7 @@ class _MenuState extends State<Menu> {
     return Padding(
       padding: const EdgeInsets.all(10),
       child: SizedBox(
-        width: 280,
+        width: 270,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.end,
           mainAxisAlignment: MainAxisAlignment.start,
@@ -53,8 +54,9 @@ class _MenuState extends State<Menu> {
                                       clipBehavior: Clip.antiAliasWithSaveLayer,
                                       child: const Center(
                                         child: Icon(
-                                          Icons.supervised_user_circle,
+                                          Icons.account_box,
                                           size: 50,
+                                          color: Color.fromARGB(181, 0, 0, 0),
                                         ),
                                       ),
                                     ),
@@ -245,11 +247,15 @@ class _MenuState extends State<Menu> {
                     ),
                   ),
                   const SizedBox(
-                    height: 10,
+                    height: 20,
                   ),
                   const SizedBox(
                     child: Contas(),
                   ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  const Menubutoes(),
                 ],
               ),
             ),

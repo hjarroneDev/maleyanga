@@ -1,20 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class ContaWidget extends StatefulWidget {
+class ButaoMenu extends StatefulWidget {
   final IconData iconConta;
+  final String botaoName;
 
-  const ContaWidget({Key? key, required this.iconConta}) : super(key: key);
+  const ButaoMenu({Key? key, required this.iconConta, required this.botaoName})
+      : super(key: key);
 
   @override
-  State<ContaWidget> createState() => _ContaWidgetState();
+  State<ButaoMenu> createState() => _ButaoMenuState();
 }
 
-class _ContaWidgetState extends State<ContaWidget> {
+class _ButaoMenuState extends State<ButaoMenu> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(right: 0, left: 60, top: 1),
+      padding: const EdgeInsets.only(right: 00, left: 00, top: 1),
       child: SizedBox(
         height: 50,
         child: InkWell(
@@ -25,16 +27,20 @@ class _ContaWidgetState extends State<ContaWidget> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Icon(
-                  widget.iconConta,
-                  size: 35,
-                  color: const Color.fromARGB(181, 0, 0, 0),
+                Row(children: [
+                  Padding(
+                  padding: const EdgeInsets.only(left: 3),
+                  child: Icon(
+                    widget.iconConta,
+                    size: 35,
+                    color: const Color.fromARGB(181, 0, 0, 0)
+                  ),
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Expanded(
                     child: Text(
-                      "111,001,000.54",
+                      widget.botaoName,
                       style: GoogleFonts.roboto(
                         textStyle: const TextStyle(
                           fontSize: 20,
@@ -42,6 +48,14 @@ class _ContaWidgetState extends State<ContaWidget> {
                         ),
                       ),
                     ),
+                  ),
+                ),
+                ],),
+                const SizedBox(
+                  width: 20,
+                  height: 70,
+                  child: Card(
+                    color:  Color.fromARGB(135, 76, 175, 120),
                   ),
                 ),
               ],
