@@ -4,8 +4,10 @@ import 'package:google_fonts/google_fonts.dart';
 class ButaoMenu extends StatefulWidget {
   final IconData iconConta;
   final String botaoName;
+  final bool visivelOn;
+  final VoidCallback onTap;
 
-  const ButaoMenu({Key? key, required this.iconConta, required this.botaoName})
+   const ButaoMenu({Key? key, required this.iconConta, required this.botaoName, required this.visivelOn, required this.onTap})
       : super(key: key);
 
   @override
@@ -15,13 +17,14 @@ class ButaoMenu extends StatefulWidget {
 class _ButaoMenuState extends State<ButaoMenu> {
   @override
   Widget build(BuildContext context) {
+    
     return Padding(
       padding: const EdgeInsets.only(right: 00, left: 00, top: 1),
       child: SizedBox(
         height: 50,
         child: InkWell(
           borderRadius: BorderRadius.circular(5),
-          onTap: () {},
+          onTap: widget.onTap,
           hoverColor: const Color.fromARGB(135, 76, 175, 120),
           child: Card(
             child: Row(
@@ -51,11 +54,14 @@ class _ButaoMenuState extends State<ButaoMenu> {
                   ),
                 ),
                 ],),
-                const SizedBox(
+                 SizedBox(
                   width: 20,
                   height: 70,
-                  child: Card(
-                    color:  Color.fromARGB(135, 76, 175, 120),
+                  child: Visibility(
+                    visible: widget.visivelOn,
+                    child: const Card(
+                      color:  Color.fromARGB(135, 76, 175, 120),
+                    ),
                   ),
                 ),
               ],
