@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../conteudo.dart';
 import '../../login_page.dart';
 import 'butao.dart';
 
@@ -51,6 +52,14 @@ class _MenubutoesState extends State<Menubutoes> {
                   visivelPlanejados = false;
                   visivelObjectivos = false;
                   visivelDefinicoes = false;
+                  const Painel(
+                    page: 0,
+                    visivelDefinicoes: false,
+                    visivelMovimentos: false,
+                    visivelObjectivos: false,
+                    visivelPlanejados: false,
+                    visvelDashboard: true,
+                  );
                 });
               },
             ),
@@ -65,6 +74,14 @@ class _MenubutoesState extends State<Menubutoes> {
                   visivelPlanejados = false;
                   visivelObjectivos = false;
                   visivelDefinicoes = false;
+                  const Painel(
+                    page: 1,
+                    visivelDefinicoes: false,
+                    visivelMovimentos: true,
+                    visivelObjectivos: false,
+                    visivelPlanejados: false,
+                    visvelDashboard: false,
+                  );
                 });
               },
             ),
@@ -79,6 +96,14 @@ class _MenubutoesState extends State<Menubutoes> {
                   visivelPlanejados = true;
                   visivelObjectivos = false;
                   visivelDefinicoes = false;
+                  const Painel(
+                    page: 2,
+                    visivelDefinicoes: false,
+                    visivelMovimentos: false,
+                    visivelObjectivos: false,
+                    visivelPlanejados: true,
+                    visvelDashboard: false,
+                  );
                 });
               },
             ),
@@ -93,6 +118,14 @@ class _MenubutoesState extends State<Menubutoes> {
                   visivelPlanejados = false;
                   visivelObjectivos = true;
                   visivelDefinicoes = false;
+                  const Painel(
+                    page: 3,
+                    visivelDefinicoes: false,
+                    visivelMovimentos: false,
+                    visivelObjectivos: true,
+                    visivelPlanejados: false,
+                    visvelDashboard: false,
+                  );
                 });
               },
             ),
@@ -107,6 +140,14 @@ class _MenubutoesState extends State<Menubutoes> {
                   visivelPlanejados = false;
                   visivelObjectivos = false;
                   visivelDefinicoes = true;
+                  const Painel(
+                    page: 4,
+                     visivelDefinicoes: true,
+                    visivelMovimentos: false,
+                    visivelObjectivos: false,
+                    visivelPlanejados: false,
+                    visvelDashboard: false,
+                  );
                 });
               },
             ),
