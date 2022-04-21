@@ -17,6 +17,7 @@ class Painel extends StatefulWidget {
 }
 
 class _PainelState extends State<Painel> {
+  int? _selectPage;
 
   final _pageActual = [
     const DasbordPage(),
@@ -28,12 +29,13 @@ class _PainelState extends State<Painel> {
 
   @override
   Widget build(BuildContext context) {
+
     return Expanded(
       child: Padding(
           padding: const EdgeInsets.all(10),
           child: Stack(
             children: [
-              _pageActual[widget.page],
+              _pageActual[_selectPage!],
             ],
           )),
     );
