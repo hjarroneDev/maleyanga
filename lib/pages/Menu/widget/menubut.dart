@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:maleyanga/pages/conteudo.dart';
+import 'package:maleyanga/pages/Coteudo/conteudo.dart';
 import '../../login_page.dart';
 import 'butao.dart';
 

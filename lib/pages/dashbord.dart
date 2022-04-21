@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'conteudo.dart';
+import 'Coteudo/conteudo.dart';
 import 'Menu/menu.dart';
 
 class Dashbord extends StatefulWidget {
