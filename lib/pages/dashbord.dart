@@ -36,11 +36,6 @@ class _DashbordState extends State<Dashbord> {
           // ignore: prefer_const_constructors
           Painel(
             page: 0,
-            visivelDefinicoes: false,
-            visivelMovimentos: false,
-            visivelObjectivos: false,
-            visivelPlanejados: false,
-            visvelDashboard: true,
           ),
         ],
       ),
