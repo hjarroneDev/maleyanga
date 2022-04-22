@@ -21,10 +21,7 @@ class _DasbordPageState extends State<DasbordPage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: const [
             
-             Padding(
-               padding: EdgeInsets.only(top: 363),
-               child: ResumoMovimento(),
-             ),
+             ResumoMovimento(),
           ],
         ),
       ),

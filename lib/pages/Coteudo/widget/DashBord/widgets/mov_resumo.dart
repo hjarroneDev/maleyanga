@@ -28,8 +28,8 @@ class _ResumoMovimentoState extends State<ResumoMovimento> {
           height: 4,
         ),
          SizedBox(
-          height: MediaQuery.of(context).size.height -424,
-          width: MediaQuery.of(context).size.width -10,
+          height: MediaQuery.of(context).size.height -45,
+          width: MediaQuery.of(context).size.width ,
           child: const Card(
             color: Colors.white,
           ),

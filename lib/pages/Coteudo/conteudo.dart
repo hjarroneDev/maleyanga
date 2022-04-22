@@ -17,34 +17,37 @@ class Pages extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8),
       child: Expanded(
-        child: Consumer<CurrentPage>(builder: (ctx, currentPage, widget) {
-          final pageView = PageView(
-            // ignore: avoid_types_as_parameter_names
-            onPageChanged: (int) {},
-            controller: _pageController,
-            scrollDirection: Axis.horizontal,
-            pageSnapping: true,
-            children: const [
-              DasbordPage(),
-              MovimentosPage(),
-              PlanejadosPage(),
-              ObjectivosPage(),
-              DefinicoesPage(),
-            ],
-          );
+        child: SizedBox(
+          width: MediaQuery.of(context).size.width - 301,
+          child: Consumer<CurrentPage>(builder: (ctx, currentPage, widget) {
+            final pageView = PageView(
+              // ignore: avoid_types_as_parameter_names
+              onPageChanged: (int) {},
+              controller: _pageController,
+              scrollDirection: Axis.horizontal,
+              pageSnapping: true,
+              children: const [
+                DasbordPage(),
+                MovimentosPage(),
+                PlanejadosPage(),
+                ObjectivosPage(),
+                DefinicoesPage(),
+              ],
+            );
 
-          if (_pageController.hasClients) {
-            _pageController.animateToPage(currentPage.currentPage,
-                duration: const Duration(microseconds: 4000),
-                curve: Curves.easeInOut);
-          }
-          return Expanded(
-            child: SizedBox(
-              width: MediaQuery.of(context).size.width - 301,
-              child: pageView,
-            ),
-          );
-        }),
+            if (_pageController.hasClients) {
+              _pageController.animateToPage(currentPage.currentPage,
+                  duration: const Duration(microseconds: 4000),
+                  curve: Curves.easeInOut);
+            }
+            return Expanded(
+              child: SizedBox(
+                width: MediaQuery.of(context).size.width - 301,
+                child: pageView,
+              ),
+            );
+          }),
+        ),
       ),
     );
   }
