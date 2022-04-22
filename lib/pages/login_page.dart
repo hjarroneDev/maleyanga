@@ -46,7 +46,7 @@ class _LoginPageState extends State<LoginPage> {
                 children: [
                   SizedBox(
                     height: heigtSizedLogIn,
-                    width: 350,
+                    width: 325,
                     child: Padding(
                       padding: const EdgeInsets.only(),
                       child: Card(

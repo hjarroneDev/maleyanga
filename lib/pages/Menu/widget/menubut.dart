@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:maleyanga/pages/Coteudo/conteudo.dart';
+import 'package:provider/provider.dart';
+import '../../class/pages_chage.dart';
 import '../../login_page.dart';
 import 'butao.dart';
 
@@ -53,8 +54,8 @@ class _MenubutoesState extends State<Menubutoes> {
                   visivelPlanejados = false;
                   visivelObjectivos = false;
                   visivelDefinicoes = false;
-                  const Painel(page: 0);
                 });
+                context.read<CurrentPage>().setCurrentPage(0);
                 
                 
               },
@@ -70,9 +71,9 @@ class _MenubutoesState extends State<Menubutoes> {
                   visivelPlanejados = false;
                   visivelObjectivos = false;
                   visivelDefinicoes = false;
-                  const Painel(page: 1);
                  
                 });
+                context.read<CurrentPage>().setCurrentPage(1);
                 
 
               },
@@ -88,9 +89,9 @@ class _MenubutoesState extends State<Menubutoes> {
                   visivelPlanejados = true;
                   visivelObjectivos = false;
                   visivelDefinicoes = false;
-                  const Painel(page: 2);
      
                 });
+                context.read<CurrentPage>().setCurrentPage(2);
               },
             ),
             ButaoMenu(
@@ -104,9 +105,9 @@ class _MenubutoesState extends State<Menubutoes> {
                   visivelPlanejados = false;
                   visivelObjectivos = true;
                   visivelDefinicoes = false;
-                  const Painel(page: 3);
      
                 });
+                context.read<CurrentPage>().setCurrentPage(3);
               },
             ),
             ButaoMenu(
@@ -120,9 +121,10 @@ class _MenubutoesState extends State<Menubutoes> {
                   visivelPlanejados = false;
                   visivelObjectivos = false;
                   visivelDefinicoes = true;
-                  const Painel(page: 4);
 
                 });
+                context.read<CurrentPage>().setCurrentPage(4);
+                
               },
             ),
             ButaoMenu(

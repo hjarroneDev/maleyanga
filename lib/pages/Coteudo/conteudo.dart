@@ -1,43 +1,54 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import '../class/pages_chage.dart';
 import 'widget/dashbord_page.dart';
 import 'widget/definicao_page.dart';
 import 'widget/movimentos_page.dart';
 import 'widget/objectivos_page.dart';
 import 'widget/planejados_page.dart';
 
-class Painel extends StatefulWidget {
-  final int page;
-  const Painel({
-    Key? key,
-    required this.page,
-  }) : super(key: key);
+class Pages extends StatelessWidget {
+  final PageController _pageController = PageController(initialPage: 0);
 
-  @override
-  State<Painel> createState() => _PainelState();
-}
-
-class _PainelState extends State<Painel> {
-  int? _selectPage;
-
-  final _pageActual = [
-    const DasbordPage(),
-    const MovimentosPage(),
-    const PlanejadosPage(),
-    const ObjectivosPage(),
-    const DefinicoesPage(),
-  ];
+  Pages({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-
-    return Expanded(
-      child: Padding(
-          padding: const EdgeInsets.all(10),
-          child: Stack(
-            children: [
-              _pageActual[_selectPage!],
+    return Padding(
+      padding: const EdgeInsets.all(8),
+      child: Expanded(
+        child: Consumer<CurrentPage>(builder: (ctx, currentPage, widget) {
+          final pageView = PageView(
+            // ignore: avoid_types_as_parameter_names
+            onPageChanged: (int) {},
+            controller: _pageController,
+            scrollDirection: Axis.horizontal,
+            pageSnapping: true,
+            children: const [
+              DasbordPage(),
+              MovimentosPage(),
+              PlanejadosPage(),
+              ObjectivosPage(),
+              DefinicoesPage(),
             ],
-          )),
+          );
+
+          if (_pageController.hasClients) {
+            _pageController.animateToPage(currentPage.currentPage,
+                duration: const Duration(microseconds: 4000),
+                curve: Curves.easeInOut);
+          }
+          return Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Expanded(
+              child: SizedBox(
+                width: MediaQuery.of(context).size.width - 311,
+                child: pageView,
+              ),
+            ),
+          );
+        }),
+      ),
     );
   }
 }
