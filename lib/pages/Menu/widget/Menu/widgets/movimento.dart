@@ -5,9 +5,10 @@ import 'package:pattern_formatter/pattern_formatter.dart';
 
 class Movimento extends StatefulWidget {
   final Color movColor;
+  final Color btColor;
   final bool transfVisivel;
   const Movimento(
-      {Key? key, required this.movColor, required this.transfVisivel})
+      {Key? key, required this.movColor, required this.transfVisivel, required this.btColor})
       : super(key: key);
 
   @override
@@ -31,7 +32,6 @@ class _MovimentoState extends State<Movimento> {
     String? conta;
     String? botao;
 
-
     if (widget.transfVisivel == false) {
       setState(() {
         conta = "Conta:  ";
@@ -43,7 +43,6 @@ class _MovimentoState extends State<Movimento> {
         botao = 'Transferir';
       });
     }
-
     return DelayedDisplay(
       delay: const Duration(milliseconds: 10),
       child: SizedBox(
@@ -80,7 +79,7 @@ class _MovimentoState extends State<Movimento> {
                                       ),
                                     ),
                                     const SizedBox(
-                                      width: 30,
+                                      width: 32,
                                     ),
                                     Expanded(
                                       child: Container(
@@ -119,6 +118,60 @@ class _MovimentoState extends State<Movimento> {
                                     ),
                                   ],
                                 ),
+                              ),
+                              const SizedBox(
+                                height: 10,
+                              ),
+                              Row(
+                                children: [
+                                  Text(
+                                    conta!,
+                                    style: GoogleFonts.roboto(
+                                      textStyle: const TextStyle(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.black54,
+                                      ),
+                                    ),
+                                  ),
+                                  const SizedBox(
+                                    width: 28,
+                                  ),
+                                  Expanded(
+                                    child: Container(
+                                      height: 35,
+                                      decoration: BoxDecoration(
+                                        border: Border.all(
+                                          color: const Color.fromARGB(
+                                              88, 104, 102, 102),
+                                          width: 2,
+                                        ),
+                                        borderRadius: BorderRadius.circular(5),
+                                      ),
+                                      child: DropdownButtonHideUnderline(
+                                        child: DropdownButton<String>(
+                                          icon: const Visibility(
+                                              visible: false,
+                                              child:
+                                                  Icon(Icons.arrow_downward)),
+                                          borderRadius:
+                                              BorderRadius.circular(8),
+                                          value: conta2,
+                                          isExpanded: true,
+                                          hint: const Text(
+                                            "  Select",
+                                          ),
+                                          items: contas
+                                              .map(buildMenuItem2)
+                                              .toList(),
+                                          onChanged: (value) => setState(
+                                            () => conta2 = value,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  )
+                                ],
                               ),
                               const SizedBox(
                                 height: 10,
@@ -178,56 +231,30 @@ class _MovimentoState extends State<Movimento> {
                               const SizedBox(
                                 height: 10,
                               ),
-                              Row(
-                                children: [
-                                  Text(
-                                    conta!,
-                                    style: GoogleFonts.roboto(
-                                      textStyle: const TextStyle(
-                                        fontSize: 18,
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.black54,
-                                      ),
+                              SizedBox(
+                                height: 34,
+                                child: TextField(
+                                  style: GoogleFonts.roboto(
+                                    textStyle: const TextStyle(
+                                      fontSize: 17,
+                                      color: Colors.black87,
                                     ),
                                   ),
-                                  const SizedBox(
-                                    width: 28,
-                                  ),
-                                  Expanded(
-                                    child: Container(
-                                      height: 35,
-                                      decoration: BoxDecoration(
-                                        border: Border.all(
-                                          color: const Color.fromARGB(
-                                              88, 104, 102, 102),
-                                          width: 2,
-                                        ),
-                                        borderRadius: BorderRadius.circular(5),
-                                      ),
-                                      child: DropdownButtonHideUnderline(
-                                        child: DropdownButton<String>(
-                                          icon: const Visibility(
-                                              visible: false,
-                                              child:
-                                                  Icon(Icons.arrow_downward)),
-                                          borderRadius:
-                                              BorderRadius.circular(8),
-                                          value: conta2,
-                                          isExpanded: true,
-                                          hint: const Text(
-                                            "  Select",
-                                          ),
-                                          items: contas
-                                              .map(buildMenuItem2)
-                                              .toList(),
-                                          onChanged: (value) => setState(
-                                            () => conta2 = value,
-                                          ),
-                                        ),
-                                      ),
+                                  textAlign: TextAlign.start,
+                                  textAlignVertical: TextAlignVertical.bottom,
+                                  decoration: InputDecoration(
+                                    hintText: 'Detalhes',
+                                    hintStyle: GoogleFonts.roboto(
+                                        color: Colors.black26),
+                                    border: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(5.0),
                                     ),
-                                  )
-                                ],
+                                    enabledBorder: const OutlineInputBorder(
+                                      borderSide: BorderSide(
+                                          color: Colors.grey, width: 0.0),
+                                    ),
+                                  ),
+                                ),
                               ),
                               const SizedBox(
                                 height: 5,
@@ -243,8 +270,9 @@ class _MovimentoState extends State<Movimento> {
                                 height: 35,
                                 child: ElevatedButton(
                                   style: ElevatedButton.styleFrom(
-                                      fixedSize: const Size.fromHeight(30),
-                                      primary: Colors.cyan[200]),
+                                    fixedSize: const Size.fromHeight(30),
+                                    primary: widget.btColor,
+                                  ),
                                   child: FittedBox(
                                     child: Text(
                                       botao!,
@@ -254,10 +282,7 @@ class _MovimentoState extends State<Movimento> {
                                       ),
                                     ),
                                   ),
-                                  onPressed: () {
-
-
-                                  },
+                                  onPressed: () {},
                                 ),
                               ),
                             ],

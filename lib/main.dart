@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'pages/class/pages_chage.dart';
-import 'pages/login_page.dart';
+import 'pages/Login/login_page.dart';
 
 
 void main() => runApp(

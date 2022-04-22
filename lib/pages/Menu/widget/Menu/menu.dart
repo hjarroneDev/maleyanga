@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'widget/menubut.dart';
-import 'widget/movimento.dart';
+import 'package:maleyanga/pages/Menu/widget/Menu/widgets/movimento.dart';
+import 'widgets/menubut.dart';
 
 class Menu extends StatefulWidget {
   final double screenWidget;
@@ -16,12 +16,22 @@ class _MenuState extends State<Menu> {
   bool movVisivel = false;
   bool transfVisivel = false;
   Color movColor = Colors.white;
+  Color btColor = Colors.white;
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(2),
-      child: SizedBox(
+      padding: const EdgeInsets.all(5),
+      child: Container(
         width: 275,
+        decoration: const BoxDecoration(
+          color: Colors.white54,
+          borderRadius: BorderRadius.only(
+            topRight: Radius.circular(5),
+            bottomRight: Radius.circular(5),
+            topLeft: Radius.circular(5),
+            bottomLeft: Radius.circular(5),
+          ),
+        ),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.end,
@@ -51,7 +61,8 @@ class _MenuState extends State<Menu> {
                                       child: Card(
                                         color: Colors.grey.shade300,
                                         semanticContainer: true,
-                                        clipBehavior: Clip.antiAliasWithSaveLayer,
+                                        clipBehavior:
+                                            Clip.antiAliasWithSaveLayer,
                                         child: const Center(
                                           child: Icon(
                                             Icons.account_box,
@@ -136,11 +147,15 @@ class _MenuState extends State<Menu> {
                                           movColor = const Color.fromARGB(
                                               97, 169, 230, 209);
                                           transfVisivel = false;
+                                          btColor = const Color.fromARGB(
+                                              255, 138, 207, 184);
                                         } else {
                                           movVisivel = !movVisivel;
                                           transfVisivel = false;
                                           movColor = const Color.fromARGB(
                                               97, 169, 230, 209);
+                                          btColor = const Color.fromARGB(
+                                              255, 138, 207, 184);
                                         }
                                       });
                                     },
@@ -170,12 +185,16 @@ class _MenuState extends State<Menu> {
                                                     96, 230, 181, 169)) {
                                           movColor = const Color.fromARGB(
                                               96, 230, 181, 169);
+                                          btColor = const Color.fromARGB(
+                                              255, 218, 137, 137);
                                           transfVisivel = false;
                                         } else {
                                           transfVisivel = false;
                                           movVisivel = !movVisivel;
                                           movColor = const Color.fromARGB(
                                               96, 230, 181, 169);
+                                          btColor = const Color.fromARGB(
+                                              255, 218, 137, 137);
                                         }
                                       });
                                     },
@@ -206,11 +225,15 @@ class _MenuState extends State<Menu> {
                                           transfVisivel = true;
                                           movColor = const Color.fromARGB(
                                               96, 169, 211, 230);
+                                          btColor = const Color.fromARGB(
+                                              255, 138, 185, 207);
                                         } else {
                                           transfVisivel = true;
                                           movVisivel = !movVisivel;
                                           movColor = const Color.fromARGB(
                                               96, 169, 211, 230);
+                                          btColor = const Color.fromARGB(
+                                              255, 138, 185, 207);
                                         }
                                       });
                                     },
@@ -242,6 +265,7 @@ class _MenuState extends State<Menu> {
                       child: Movimento(
                         movColor: movColor,
                         transfVisivel: transfVisivel,
+                        btColor: btColor,
                       ),
                     ),
                     const Menubutoes(),

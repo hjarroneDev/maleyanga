@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:maleyanga/pages/Login/login_page.dart';
 import 'package:provider/provider.dart';
-import '../../class/pages_chage.dart';
-import '../../login_page.dart';
+import '../../../../class/pages_chage.dart';
 import 'butao.dart';
 
 class Menubutoes extends StatefulWidget {

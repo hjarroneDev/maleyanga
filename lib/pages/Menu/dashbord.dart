@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'Coteudo/conteudo.dart';
-import 'Menu/menu.dart';
+import '../Coteudo/conteudo.dart';
+import 'widget/Menu/menu.dart';
 
 class Dashbord extends StatefulWidget {
   const Dashbord({Key? key}) : super(key: key);

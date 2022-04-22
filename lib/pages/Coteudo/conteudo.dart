@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../class/pages_chage.dart';
-import 'widget/dashbord_page.dart';
-import 'widget/definicao_page.dart';
-import 'widget/movimentos_page.dart';
-import 'widget/objectivos_page.dart';
-import 'widget/planejados_page.dart';
+import 'widget/DashBord/dashbord_page.dart';
+import 'widget/Definicao/definicao_page.dart';
+import 'widget/Movimentos/movimentos_page.dart';
+import 'widget/Objectivo/objectivos_page.dart';
+import 'widget/Planejado/planejados_page.dart';
 
 class Pages extends StatelessWidget {
   final PageController _pageController = PageController(initialPage: 0);
@@ -38,13 +38,10 @@ class Pages extends StatelessWidget {
                 duration: const Duration(microseconds: 4000),
                 curve: Curves.easeInOut);
           }
-          return Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Expanded(
-              child: SizedBox(
-                width: MediaQuery.of(context).size.width - 311,
-                child: pageView,
-              ),
+          return Expanded(
+            child: SizedBox(
+              width: MediaQuery.of(context).size.width - 301,
+              child: pageView,
             ),
           );
         }),
