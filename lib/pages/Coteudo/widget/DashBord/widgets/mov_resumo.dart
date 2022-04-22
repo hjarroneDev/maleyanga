@@ -31,7 +31,7 @@ class _ResumoMovimentoState extends State<ResumoMovimento> {
           height: MediaQuery.of(context).size.height -45,
           width: MediaQuery.of(context).size.width ,
           child: const Card(
-            color: Colors.white,
+            color: Color.fromARGB(181, 255, 255, 255),
           ),
         )
       ],

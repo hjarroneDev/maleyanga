@@ -18,7 +18,7 @@ class Pages extends StatelessWidget {
       padding: const EdgeInsets.all(8),
       child: Expanded(
         child: SizedBox(
-          width: MediaQuery.of(context).size.width - 301,
+          width: MediaQuery.of(context).size.width - 322,
           child: Consumer<CurrentPage>(builder: (ctx, currentPage, widget) {
             final pageView = PageView(
               // ignore: avoid_types_as_parameter_names
@@ -42,7 +42,7 @@ class Pages extends StatelessWidget {
             }
             return Expanded(
               child: SizedBox(
-                width: MediaQuery.of(context).size.width - 301,
+                width: MediaQuery.of(context).size.width - 322,
                 child: pageView,
               ),
             );
