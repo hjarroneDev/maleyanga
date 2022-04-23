@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'widgets/mov_resumo.dart';
+import 'widgets/Movimentos/mov_resumo.dart';
+import 'widgets/Resumo/widgets/conta_detalhe.dart';
 
 class DasbordPage extends StatefulWidget {
   const DasbordPage({Key? key}) : super(key: key);
@@ -20,6 +21,7 @@ class _DasbordPageState extends State<DasbordPage> {
         
           crossAxisAlignment: CrossAxisAlignment.start,
           children: const [
+           DetalhesConta(),
             
              ResumoMovimento(),
           ],
