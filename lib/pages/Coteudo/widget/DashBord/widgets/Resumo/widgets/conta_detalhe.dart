@@ -15,7 +15,7 @@ class _DetalhesContaState extends State<DetalhesConta> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          "    Detalhes",
+          "    Meus Detalhes",
           style: GoogleFonts.roboto(
             textStyle: const TextStyle(
               fontSize: 18,
