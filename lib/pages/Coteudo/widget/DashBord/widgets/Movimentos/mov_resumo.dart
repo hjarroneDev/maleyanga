@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'widgets/last_mov.dart';
-import 'widgets/next_mov.dart';
+import 'widgets/Last/last_mov.dart';
+import 'widgets/Next/next_mov.dart';
 
 class ResumoMovimento extends StatefulWidget {
   const ResumoMovimento({Key? key}) : super(key: key);

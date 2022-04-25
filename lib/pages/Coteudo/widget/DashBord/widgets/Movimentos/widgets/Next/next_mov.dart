@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class UltimoMovimento extends StatefulWidget {
-  const UltimoMovimento({Key? key}) : super(key: key);
+class ProximosMovimento extends StatefulWidget {
+  const ProximosMovimento({Key? key}) : super(key: key);
 
   @override
-  State<UltimoMovimento> createState() => _UltimoMovimentoState();
+  State<ProximosMovimento> createState() => _ProximosMovimentoState();
 }
 
-class _UltimoMovimentoState extends State<UltimoMovimento> {
+class _ProximosMovimentoState extends State<ProximosMovimento> {
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          "   Ultimos Movimentos",
+          "    Planejados",
           style: GoogleFonts.roboto(
             textStyle: const TextStyle(
               fontSize: 18,
@@ -24,19 +24,12 @@ class _UltimoMovimentoState extends State<UltimoMovimento> {
             ),
           ),
         ),
-        const SizedBox(
-          height: 2,
-        ),
         SizedBox(
           height: MediaQuery.of(context).size.height - 445,
-          width: MediaQuery.of(context).size.width - 700,
-          child: const SizedBox(
-            height: 50,
-            width: 50,
-            child: Card(
-              color: Colors.white,
-              
-            ),
+          width: MediaQuery.of(context).size.width - 750,
+          child: const Card(
+            color: Colors.white,
+            
           ),
         )
       ],
