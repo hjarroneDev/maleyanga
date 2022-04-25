@@ -24,16 +24,19 @@ class _UltimoMovimentoState extends State<UltimoMovimento> {
             ),
           ),
         ),
-          const Divider(
-          height: 4,
+        const SizedBox(
+          height: 2,
         ),
-
-      
-         SizedBox(
-          height: MediaQuery.of(context).size.height -445,
-          width: MediaQuery.of(context).size.width - 700 ,
-          child: const Card(
-            color: Color.fromARGB(181, 255, 255, 255),
+        SizedBox(
+          height: MediaQuery.of(context).size.height - 445,
+          width: MediaQuery.of(context).size.width - 700,
+          child: const SizedBox(
+            height: 50,
+            width: 50,
+            child: Card(
+              color: Colors.white,
+              
+            ),
           ),
         )
       ],

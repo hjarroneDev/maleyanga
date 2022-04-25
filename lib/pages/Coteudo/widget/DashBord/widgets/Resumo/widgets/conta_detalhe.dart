@@ -28,7 +28,7 @@ class _DetalhesContaState extends State<DetalhesConta> {
           height: 4,
         ),
          SizedBox(
-          height: 379,
+          height: 365,
           width: MediaQuery.of(context).size.width ,
           child: const Card(
             color: Color.fromARGB(181, 255, 255, 255),
