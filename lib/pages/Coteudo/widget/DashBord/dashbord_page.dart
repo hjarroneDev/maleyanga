@@ -18,12 +18,11 @@ class _DasbordPageState extends State<DasbordPage> {
       child: Container(
         color: Colors.transparent,
         child: Column(
-        
           crossAxisAlignment: CrossAxisAlignment.start,
           children: const [
-           DetalhesConta(),
-            
-             ResumoMovimento(),
+            DetalhesConta(),
+            SizedBox(height: 14,),
+            ResumoMovimento(),
           ],
         ),
       ),
