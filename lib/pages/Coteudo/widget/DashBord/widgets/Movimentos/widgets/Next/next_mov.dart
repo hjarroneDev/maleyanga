@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'widgets/nextmov.dart';
 
 class ProximosMovimento extends StatefulWidget {
   const ProximosMovimento({Key? key}) : super(key: key);
@@ -15,7 +16,7 @@ class _ProximosMovimentoState extends State<ProximosMovimento> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          "    Planejados",
+          "  Planejados",
           style: GoogleFonts.roboto(
             textStyle: const TextStyle(
               fontSize: 18,
@@ -27,9 +28,15 @@ class _ProximosMovimentoState extends State<ProximosMovimento> {
         SizedBox(
           height: MediaQuery.of(context).size.height - 445,
           width: MediaQuery.of(context).size.width - 750,
-          child: const Card(
-            color: Colors.white,
-            
+          child: Column(
+            children: const [
+              WidgetProximoMovimento(),
+              WidgetProximoMovimento(),
+              WidgetProximoMovimento(),
+              WidgetProximoMovimento(),
+              WidgetProximoMovimento(),
+              WidgetProximoMovimento(),
+            ],
           ),
         )
       ],

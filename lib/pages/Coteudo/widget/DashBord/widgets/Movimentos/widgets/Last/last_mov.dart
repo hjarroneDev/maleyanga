@@ -17,7 +17,7 @@ class _UltimoMovimentoState extends State<UltimoMovimento> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          "   Ultimos Movimentos",
+          "  Ultimos Movimentos",
           style: GoogleFonts.roboto(
             textStyle: const TextStyle(
               fontSize: 18,
