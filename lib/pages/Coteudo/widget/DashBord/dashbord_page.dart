@@ -21,8 +21,7 @@ class _DasbordPageState extends State<DasbordPage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: const [
             DetalhesConta(),
-            SizedBox(height: 14,),
-            ResumoMovimento(),
+
           ],
         ),
       ),

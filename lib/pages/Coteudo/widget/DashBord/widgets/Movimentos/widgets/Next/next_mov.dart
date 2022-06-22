@@ -26,19 +26,20 @@ class _ProximosMovimentoState extends State<ProximosMovimento> {
           ),
         ),
         SizedBox(
-          height: MediaQuery.of(context).size.height - 445,
-          width: MediaQuery.of(context).size.width - 750,
+          width: 850,
           child: Card(
-            child: Column(
-              children: const [
-                WidgetProximoMovimento(),
-                WidgetProximoMovimento(),
-                WidgetProximoMovimento(),
-                WidgetProximoMovimento(),
-                WidgetProximoMovimento(),
-                WidgetProximoMovimento(),
-              
-              ],
+            child: SingleChildScrollView(
+              child: Column(
+                children: const [
+                  WidgetProximoMovimento(),
+                  WidgetProximoMovimento(),
+                  WidgetProximoMovimento(),
+                  WidgetProximoMovimento(),
+                  WidgetProximoMovimento(),
+                  WidgetProximoMovimento(),
+                
+                ],
+              ),
             ),
           ),
         )

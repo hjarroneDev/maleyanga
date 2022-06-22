@@ -16,35 +16,33 @@ class _UltimoMovimentoState extends State<UltimoMovimento> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        const SizedBox(
+          height: 5,
+        ),
         Text(
-          "  Ultimos Movimentos",
+          "  Movimentos Recentes",
           style: GoogleFonts.roboto(
             textStyle: const TextStyle(
-              fontSize: 18,
+              fontSize: 15,
               fontWeight: FontWeight.bold,
               color: Colors.black54,
             ),
           ),
         ),
-        const SizedBox(
-          height: 2,
-        ),
-        SizedBox(
-          height: MediaQuery.of(context).size.height - 445,
-          width: 428,
+      
+        Expanded(
           child: SizedBox(
-            height: 50,
-            width: 50,
-            child: Card(
-              color: Colors.white,
-              child: Column(
-                children: const [
-                  WidgetUltimoMovimento(),
-                  WidgetUltimoMovimento(),
-                  WidgetUltimoMovimento(),
-                  WidgetUltimoMovimento(),
-                  WidgetUltimoMovimento(),
-                ],
+            width: 291,
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Card(
+                color: Colors.white,
+                child: ListView.builder(
+                  itemCount: 25,
+                  itemBuilder: (context, index) {
+                    return const WidgetUltimoMovimento();
+                  },
+                ),
               ),
             ),
           ),

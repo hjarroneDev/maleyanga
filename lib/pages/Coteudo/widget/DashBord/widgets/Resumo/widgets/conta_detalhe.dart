@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../Movimentos/widgets/Last/last_mov.dart';
+import '../../Movimentos/widgets/Next/next_mov.dart';
+
 class DetalhesConta extends StatefulWidget {
   const DetalhesConta({Key? key}) : super(key: key);
 
@@ -27,11 +30,32 @@ class _DetalhesContaState extends State<DetalhesConta> {
         const Divider(
           height: 4,
         ),
-         SizedBox(
-          height: 365,
-          width: MediaQuery.of(context).size.width ,
-          child: const Card(
-            color: Color.fromARGB(181, 255, 255, 255),
+        Container(
+          height: MediaQuery.of(context).size.height - 41,
+          width: MediaQuery.of(context).size.width,
+          color: Colors.transparent,
+          child: Card(
+            color: const Color.fromARGB(181, 255, 255, 255),
+            child: Row(
+              children: [
+                Expanded(
+                  child: Column(
+                    children: [
+                      Expanded(
+                        child: Container(
+                          color: Colors.red,
+                        ),
+                      ),
+                      const ProximosMovimento(),
+                    ],
+                  ),
+                ),
+                const SizedBox(
+                  width: 5,
+                ),
+                const UltimoMovimento(),
+              ],
+            ),
           ),
         )
       ],
